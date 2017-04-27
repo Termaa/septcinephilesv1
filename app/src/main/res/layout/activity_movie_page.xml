@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#B0C4DE"
     >
 
     <com.android.volley.toolbox.NetworkImageView
@@ -14,10 +15,14 @@
         android:id="@+id/poster"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:scaleType="fitXY"
+        android:layout_marginRight="3dp"
+        >
     </com.android.volley.toolbox.NetworkImageView>
 
     <RelativeLayout
+        android:id="@+id/topview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -27,7 +32,8 @@
         android:layout_toEndOf="@+id/poster"
         android:weightSum="1"
         android:layout_alignBottom="@+id/poster"
-        android:layout_toRightOf="@+id/poster">
+        android:layout_toRightOf="@+id/poster"
+        >
 
         <TextView
             android:id="@+id/genres"
@@ -75,6 +81,19 @@
     </RelativeLayout>
 
     <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Synopsis :"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="#696969"
+        android:textStyle="bold"
+        android:background="#B0C4DE"
+        android:layout_below="@+id/topview"
+        />
+
+    <TextView
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,7 +104,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:text='"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."'
-        android:layout_below="@+id/poster" />
+        android:layout_below="@+id/label"
+
+        />
 
 
 </RelativeLayout>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">septcinephiles</string>
+    <string name="title_activity_search">search</string>
 </resources>

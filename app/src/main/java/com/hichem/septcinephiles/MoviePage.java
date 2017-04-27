@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -78,12 +80,37 @@ public class MoviePage extends AppCompatActivity {
 
                 @Override
                 public void onErrorResponse(VolleyError volleyError) {
-                    description.setText("ERREUR RESPONSE");
+                    description.setText(volleyError.getMessage());
                 }
             }
         );
 
 
         AppController.getInstance().addToRequestQueue(jsObjRequest);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mymovies:
+
+                return true;
+            case R.id.watchlist:
+
+                return true;
+            case R.id.search :
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

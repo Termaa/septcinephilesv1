@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="Title"/>
+        android:id="@+id/search"
+        android:title="Recherche"
+        android:icon="@drawable/search"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/watchlist"
+        android:title="Ma liste à voir"
+        android:icon="@drawable/watchlist"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/mymovies"
+        android:icon="@drawable/my_movies"
+        android:title="Mes films"
+        app:showAsAction="always"/>
 </menu>
