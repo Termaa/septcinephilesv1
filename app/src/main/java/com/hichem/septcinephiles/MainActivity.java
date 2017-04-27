@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     // Movies json url
-    private static final String url = "http://api.androidhive.info/json/movies.json";
+    private static final String url = "http://ns331425.ip-37-187-121.eu:8080/selection.json";
     private ProgressDialog pDialog;
     private List<Movie> movieList = new ArrayList<Movie>();
     private MovieListAdapter adapter;
