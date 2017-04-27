@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Movie> movieList = new ArrayList<Movie>();
     private MovieListAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,10 +111,6 @@ public class MainActivity extends AppCompatActivity {
                 Movie entry= (Movie) parent.getAdapter().getItem(position);
                 Intent intent = new Intent(MainActivity.this, MoviePage.class);
                 intent.putExtra("titre", entry.getTitle());
-                intent.putExtra("image", entry.getThumbnailUrl());
-                intent.putExtra("genres", entry.getGenre());
-                intent.putExtra("note", entry.getRating());
-                intent.putExtra("annee", entry.getYear());
                 startActivity(intent);
             }
         });
@@ -146,14 +143,16 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.mymovies:
-
+                Intent intent = new Intent(this, CheckedList.class);
+                startActivity(intent);
                 return true;
             case R.id.watchlist:
-
+                Intent intent2 = new Intent(this, WatchList.class);
+                startActivity(intent2);
                 return true;
             case R.id.search :
-                Intent intent = new Intent(this, Search.class);
-                startActivity(intent);
+                Intent intent3 = new Intent(this, Search.class);
+                startActivity(intent3);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

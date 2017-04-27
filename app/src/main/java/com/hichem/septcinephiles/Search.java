@@ -1,16 +1,18 @@
 package com.hichem.septcinephiles;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class Search extends AppCompatActivity {
+public class Search extends AppCompatActivity implements SearchFragment.Listener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
     }
 
     @Override
@@ -25,10 +27,12 @@ public class Search extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.mymovies:
-
+                Intent intent = new Intent(this, CheckedList.class);
+                startActivity(intent);
                 return true;
             case R.id.watchlist:
-
+                Intent intent2 = new Intent(this, WatchList.class);
+                startActivity(intent2);
                 return true;
             case R.id.search :
 
@@ -37,4 +41,12 @@ public class Search extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    @Override
+    public void onButtonClick(String text) {
+        ResultFragment rf;
+        rf = (ResultFragment) getSupportFragmentManager().findFragmentById(R.id.fragment2);
+        rf.loadResultList(text);
+
+     }
 }

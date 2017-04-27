@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="50dp"
-    android:layout_width="match_parent">
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <EditText
-        android:id="@+id/seachvalue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Recherche"></EditText>
 
-    <Button
+
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.hichem.septcinephiles.SearchFragment"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        tools:layout="@layout/search_fragment_1" />
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.hichem.septcinephiles.ResultFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Go"
-        />
+        android:layout_below="@id/fragment"
+        tools:layout="@layout/result_fragment" />
 
-</LinearLayout>
+</RelativeLayout>
 

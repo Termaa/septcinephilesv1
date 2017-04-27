@@ -20,7 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MoviePage" />
-        <activity android:name=".Search"></activity>
+        <activity android:name=".Search" />
+        <activity android:name=".WatchList" />
+        <activity android:name=".CheckedList"></activity>
     </application>
 
 </manifest>
