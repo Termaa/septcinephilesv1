@@ -38,7 +38,7 @@
         <TextView
             android:id="@+id/genres"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:text="TextView"
             tools:text="genres1 genres2"
             android:layout_below="@+id/title"
@@ -48,14 +48,14 @@
         <TextView
             android:id="@+id/annee"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:text="TextView"
             android:layout_below="@+id/note" />/>
 
         <TextView
             android:id="@+id/note"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:text="TextView"
             android:layout_below="@+id/genres" />
             />
@@ -63,7 +63,7 @@
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:textSize="25sp"
             tools:text="Titre du film"
             android:layout_alignParentTop="true"
