@@ -36,6 +36,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 public class MoviePage extends AppCompatActivity {
@@ -111,11 +112,12 @@ public class MoviePage extends AppCompatActivity {
         titre.setText(getIntent().getExtras().getString("titre"));
 
         JsonObjectRequest jsObjRequest = new JsonObjectRequest (
-                Request.Method.GET, url + titre.getText() , null ,
+                Request.Method.GET, (url + titre.getText().toString()).replace(" ", "%20") , null ,
                 new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject jsonObject) {
                     try {
+
                         annee.setText(jsonObject.getString("Year"));
                         genre.setText(jsonObject.getString("Genre"));
                         description.setText(jsonObject.getString("Plot"));
@@ -134,7 +136,7 @@ public class MoviePage extends AppCompatActivity {
 
                 @Override
                 public void onErrorResponse(VolleyError volleyError) {
-                    description.setText(volleyError.getMessage());
+                    description.setText(volleyError.toString());
                 }
             }
         );
