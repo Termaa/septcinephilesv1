@@ -62,7 +62,7 @@ public class ResultFragment extends Fragment {
         String url = "http://www.omdbapi.com/?s=" + text;
         System.out.println(url);
         JsonObjectRequest jsObjRequest = new JsonObjectRequest (
-                Request.Method.GET, url , null ,
+                Request.Method.GET, url.replace(" ", "%20") , null ,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject jsonObject) {
