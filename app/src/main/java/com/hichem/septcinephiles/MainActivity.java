@@ -46,13 +46,11 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         pDialog = new ProgressDialog(this);
-        // Showing progress dialog before making http request
         pDialog.setMessage("Loading...");
         pDialog.show();
 
 
 
-        // Creating volley request obj
         JsonArrayRequest movieReq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -60,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
                         Log.d(TAG, response.toString());
                         hidePDialog();
 
-                        // Parsing json
 
                         for (int i = 0; i < response.length(); i++) {
                             try {
@@ -73,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                                         .doubleValue());
                                 movie.setYear(obj.getInt("releaseYear"));
 
-                                // Genre is json array
                                 JSONArray genreArry = obj.getJSONArray("genre");
                                 ArrayList<String> genre = new ArrayList<String>();
                                 for (int j = 0; j < genreArry.length(); j++) {
@@ -81,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 movie.setGenre(genre);
 
-                                // adding movie to movies array
                                 movieList.add(movie);
 
                             } catch (JSONException e) {
@@ -91,8 +86,6 @@ public class MainActivity extends AppCompatActivity {
                         }
 
 
-                        // notifying list adapter about data changes
-                        // so that it renders the list view with updated data
                         adapter.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
@@ -133,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
 
         return true;

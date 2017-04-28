@@ -1,8 +1,5 @@
 package com.hichem.septcinephiles;
 
-/**
- * Created by arforia_julien on 26/04/2017.
- */
 import java.util.ArrayList;
 
 public class Movie {
